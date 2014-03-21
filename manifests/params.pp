@@ -9,5 +9,5 @@ class iis_rewrite::params {
     'x64'   => 'http://go.microsoft.com/?linkid=9722532',
     default => ''
   }
-  $download_destination    = "c:\\temp"
+  $download_destination    = 'c:/temp'
 }

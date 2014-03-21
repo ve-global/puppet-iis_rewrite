@@ -1,8 +1,12 @@
+# == Class: iis_rewrite::install
+#
+# This is the installer for the IIS Rewrite 2.0 module
+#
 class iis_rewrite::install {
 
   validate_string($iis_rewrite::package_source_location)
 
-  $installerpath = "${iis_rewrite::download_destination}/rewrite_2.0_rtw_${::architecture}.msi"
+  $installerpath = "${iis_rewrite::download_destination}\\rewrite_2.0_rtw_${::architecture}.msi"
 
   case downcase($::osfamily) {
     'windows': {

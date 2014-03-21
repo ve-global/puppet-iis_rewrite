@@ -7,4 +7,3 @@ project_page 'https://github.com/opentable/puppet-nsclient'
 dependency    'puppetlabs/stdlib', '>=3.0.0'
 dependency    'opentable/download_file', '0.0.2'
 dependency    'joshcooper/powershell', '0.0.6'
-    
