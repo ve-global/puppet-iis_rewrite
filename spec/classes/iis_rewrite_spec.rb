@@ -7,7 +7,7 @@ describe 'iis_rewrite', :type => :class do
       :architecture => 'x64'
   } }
   let(:params) {{
-      :package_source_location => 'http://go.microsoft.com/?linkid=9722532',
+      :package_source_location => 'http://download.microsoft.com/download/6/7/D/67D80164-7DD0-48AF-86E3-DE7A182D6815/rewrite_2.0_rtw_x64.msi',
       :download_destination    => 'C:\temp'
   }}
 
@@ -17,22 +17,20 @@ describe 'iis_rewrite', :type => :class do
 
     it { should contain_class('iis_rewrite') }
 
-    it { should contain_exec('install_iis_7_rewrite_module_2')
-          .with_command('msiexec /I C:\temp\rewrite_2.0_rtw_x64.msi /q')
-          .with_onlyif('if (Test-Path $env:programfiles\Reference Assemblies\Microsoft\IIS\Microsoft.Web.Iis.Rewrite.dll){ exit 1 }')
-          .with_provider('powershell')
-          .that_requires('Download_file[iis-rewrite-2.0]')
-    }
+    it { should contain_exec('install_iis_7_rewrite_module_2').with({
+      'command'  => 'msiexec /I C:\temp\rewrite_2.0_rtw_x64.msi /q',
+      'onlyif'   => 'if (Test-Path $env:programfiles\Reference Assemblies\Microsoft\IIS\Microsoft.Web.Iis.Rewrite.dll){ exit 1 }',
+      'provider' => 'powershell',
+      'require' => 'Download_file[iis-rewrite-2.0]'
+    }) }
 
-    it { should contain_download_file('iis-rewrite-2.0')
-          .with_url('http://go.microsoft.com/?linkid=9722532')
-          .with_destination_directory('C:\\temp')
-          .that_requires('File[C:\temp]')
-    }
+    it { should contain_download_file('iis-rewrite-2.0').with({
+        'url'                   => 'http://download.microsoft.com/download/6/7/D/67D80164-7DD0-48AF-86E3-DE7A182D6815/rewrite_2.0_rtw_x64.msi',
+        'destination_directory' => 'C:\\temp',
+        'require'              => 'File[C:\temp]'
+    }) }
 
-    it { should contain_file('C:\temp')
-          .with_ensure('directory')
-    }
+    it { should contain_file('C:\temp').with_ensure('directory') }
 
   end
 
