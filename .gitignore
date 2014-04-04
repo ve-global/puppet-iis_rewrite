@@ -1,7 +1,7 @@
-*.iml
-Gemfile.lock
-/.idea/*
+.*.sw?
 pkg
 spec/fixtures
 .rspec_system
-.bundle/
+.vagrant
+.idea
+*.iml

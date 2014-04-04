@@ -8,6 +8,10 @@ class iis_rewrite::install {
 
   $installerpath = "${iis_rewrite::download_destination}\\rewrite_2.0_rtw_${::architecture}.msi"
 
+  if $caller_module_name != $module_name {
+    fail("Use of private class ${name} by ${caller_module_name}")
+  }
+
   case downcase($::osfamily) {
     'windows': {
 
