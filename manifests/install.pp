@@ -29,11 +29,11 @@ class iis_rewrite::install {
       }
 
       exec { 'install_iis_7_rewrite_module_2':
-        command   => "msiexec /I ${installerpath} /q",
-        onlyif    => 'if (Test-Path \'C:\Program Files\Reference Assemblies\Microsoft\IIS\Microsoft.Web.Iis.Rewrite.dll\'){ exit 1 }',
-        returns   => [0,194,1641,3010],
-        provider  => powershell,
-        require   => Download_file['iis-rewrite-2.0'],
+        command  => "msiexec /I ${installerpath} /q",
+        onlyif   => 'if (Test-Path \'C:\Program Files\Reference Assemblies\Microsoft\IIS\Microsoft.Web.Iis.Rewrite.dll\'){ exit 1 }',
+        returns  => [0,194,1641,3010],
+        provider => powershell,
+        require  => Download_file['iis-rewrite-2.0'],
       }
     }
     default: {
