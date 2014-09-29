@@ -1,6 +1,11 @@
+# Author::    Paul Stack  (mailto:pstack@opentable.com)
+# Copyright:: Copyright (c) 2013 OpenTable Inc
+# License::   MIT
+
 # == Class: iis_rewrite::install
 #
-# This is the installer for the IIS Rewrite 2.0 module
+# This private class is meant to be called from `iis_rewrite`.
+# It downloads the package and installs it.
 #
 class iis_rewrite::install {
 

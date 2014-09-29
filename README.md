@@ -73,19 +73,15 @@ The destination path where the package will be downloaded to on the node. Defaul
 
 ##Limitations
 
-##Development
+This module is tested on the following platforms:
+
+* Windows 2008
+* Windows 2008 R2
+* Windows 2012
+* Windows 2012 R2
+
+It is tested with the OSS version of Puppet only.
 
 ###Contributing
 
 Please read CONTRIBUTING.md for full details on contributing to this project.
-
-###Running tests
-
-This project contains tests for both [rspec-puppet](http://rspec-puppet.com/) and [beaker](https://github.com/puppetlabs/beaker) to verify functionality. For in-depth information please see their respective documentation.
-
-Quickstart:
-
-    gem install bundler
-    bundle install
-    bundle exec rake spec
-	BEAKER_DEBUG=yes bundle exec rspec spec/acceptance

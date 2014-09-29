@@ -1,36 +1,26 @@
 {
-    "operatingsystem_support": [
-        { "operatingsystem": "Windows" }
-    ],
-    "requirements": [
-        {
-            "name": "pe",
-            "version_requirement": "3.2.x"
-        },
-        {
-            "name": "puppet",
-            "version_requirement": "3.x"
-        }
-    ],
-    "name":         "opentable/iis_rewrite",
-    "version":      "0.1.0",
-    "source":       "git://github.com/opentable/iis_rewrite",
-    "author":       "opentable",
-    "summary":      "Module that will install the IIS Rewrite 2.0 Module on Windows",
-    "project_page": "https://github.com/opentable/iis_rewrite",
-    "license":      "MIT",
-    "dependencies": [
-        {
-            "name": "puppetlabs/stdlib",
-            "version_requirement": ">= 3.0.0"
-        },
-        {
-            "name": "opentable/download_file",
-            "version_requirement": "= 0.0.2"
-        },
-        {
-            "name": "joshcooper/powershell",
-            "version_requirement": "= 0.0.6"
-        }
-    ]
+  "name":         "opentable/iis_rewrite",
+  "version":      "0.1.0",
+  "author":       "opentable",
+  "license":      "MIT",
+  "source":       "https://github.com/opentable/iis_rewrite",
+  "project_page": "https://github.com/opentable/iis_rewrite",
+  "summary":      "Module that will install the IIS Rewrite 2.0 Module on Windows",
+  "issues_url":   "https://github.com/opentable/iis_rewrite/issues",
+  "tags": ["windows","iis","powershell"],
+
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.0.0 <5.0.0"
+    },
+    {
+      "name": "opentable/download_file",
+      "version_requirement": ">= 0.0.2"
+    },
+    {
+      "name": "puppetlabs/powershell",
+      "version_requirement": ">= 1.0.1"
+    }
+  ]
 }
