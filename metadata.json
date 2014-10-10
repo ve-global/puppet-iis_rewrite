@@ -1,6 +1,6 @@
 {
-  "name":         "opentable/iis_rewrite",
-  "version":      "0.1.0",
+  "name":         "opentable-iis_rewrite",
+  "version":      "1.0.0",
   "author":       "opentable",
   "license":      "MIT",
   "source":       "https://github.com/opentable/iis_rewrite",
@@ -8,7 +8,12 @@
   "summary":      "Module that will install the IIS Rewrite 2.0 Module on Windows",
   "issues_url":   "https://github.com/opentable/iis_rewrite/issues",
   "tags": ["windows","iis","powershell"],
-
+  "operatingsystem_support": [
+    {
+    "operatingsystem":"Windows",
+    "operatingsystemrelease":[ "2008R2", "2012", "2012R2" ]
+    }
+  ],
   "dependencies": [
     {
       "name": "puppetlabs/stdlib",
