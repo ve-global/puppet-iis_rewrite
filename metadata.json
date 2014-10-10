@@ -16,11 +16,11 @@
     },
     {
       "name": "opentable/download_file",
-      "version_requirement": ">= 0.0.2"
+      "version_requirement": ">= 0.0.2 <1.0.0"
     },
     {
       "name": "puppetlabs/powershell",
-      "version_requirement": ">= 1.0.1"
+      "version_requirement": ">= 1.0.1 <2.0.0"
     }
   ]
 }
