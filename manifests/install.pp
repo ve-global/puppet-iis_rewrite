@@ -9,17 +9,13 @@
 #
 class iis_rewrite::install {
 
-  validate_string($iis_rewrite::package_source_location)
+  assert_private()
+  validate_legacy(String, 'validate_string', $iis_rewrite::package_source_location)
 
   $installerpath = "${iis_rewrite::download_destination}\\rewrite_2.0_rtw_${::architecture}.msi"
 
-  if $caller_module_name != $module_name {
-    fail("Use of private class ${name} by ${caller_module_name}")
-  }
-
   case downcase($::osfamily) {
     'windows': {
-
       ensure_resource(file,$iis_rewrite::download_destination, { 'ensure' => 'directory' })
 
       download_file { 'iis-rewrite-2.0':

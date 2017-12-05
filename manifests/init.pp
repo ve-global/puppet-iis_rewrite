@@ -33,9 +33,7 @@ class iis_rewrite (
   $download_destination    = $iis_rewrite::params::download_destination
 ) inherits iis_rewrite::params {
 
-  validate_string($package_source_location)
-
-  class {'iis_rewrite::install':} ->
-  Class['iis_rewrite']
+  validate_legacy(String, 'validate_string', $package_source_location)
+  include ::iis_rewrite::install
 
 }
